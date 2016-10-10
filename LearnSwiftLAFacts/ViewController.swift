@@ -14,8 +14,9 @@ class ViewController: UIViewController {
     
     let imageURL = "https://s3-us-west-2.amazonaws.com/awslearnswiftla/LSLAclouds.jpg"
     
-    // creating an instance of the FactModel object
-    var factModel = FactModel()
+    let jsonURL = "https://s3-us-west-2.amazonaws.com/awslearnswiftla/SwiftFacts.json"
+    
+    var swiftFacts: [String]?
     
     // MARK: IBOutlets
     
@@ -38,8 +39,8 @@ class ViewController: UIViewController {
         activityIndicator.startAnimating()
         
         downloadImage()
-     
-    downloadJson()
+        
+        downloadJson()
         
     }
 
@@ -66,6 +67,33 @@ class ViewController: UIViewController {
     }
     
     func downloadJson() {
+        
+        guard let url = URL(string: jsonURL) else {
+            print("Error with json url")
+            return
+        }
+        
+        URLSession.shared.dataTask(with:url, completionHandler: { (data, response, error) in
+            
+            guard let data = data, error == nil else {
+                print(error)
+                return
+            }
+            
+            do {
+                if let array = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String] {
+                    
+                    self.swiftFacts = array
+                }
+                
+            } catch let error as NSError {
+                print(error)
+            }
+            
+        }).resume()
+    }
+    
+    func zdownloadJson() {
         
         factModel.downloadFacts() { (factArray) in
             
