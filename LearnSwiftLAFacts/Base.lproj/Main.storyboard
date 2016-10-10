@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="LearnSwiftLAFacts" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bmO-xa-gUb">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="isz-aG-mZN"/>
+                                </constraints>
+                            </imageView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="inC-mh-CVA"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Learn Swift L.A." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uMe-x4-Bly">
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <color key="textColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mPn-Vq-waj">
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Next Fact"/>
+                                <connections>
+                                    <action selector="nextFact:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6RK-HF-uPN"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fact" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hsI-Ff-p4d">
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <color key="textColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="bmO-xa-gUb" firstAttribute="top" secondItem="uMe-x4-Bly" secondAttribute="bottom" constant="-54" id="AV7-My-x1g"/>
+                            <constraint firstAttribute="trailing" secondItem="bmO-xa-gUb" secondAttribute="trailing" id="SQj-5c-706"/>
+                            <constraint firstItem="inC-mh-CVA" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="37" id="X3b-4o-jF4"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hsI-Ff-p4d" secondAttribute="trailing" id="dii-Z5-SAY"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="mPn-Vq-waj" secondAttribute="bottom" constant="17" id="hmz-aU-RS9"/>
+                            <constraint firstItem="hsI-Ff-p4d" firstAttribute="top" secondItem="bmO-xa-gUb" secondAttribute="bottom" constant="75" id="jae-4i-sG1"/>
+                            <constraint firstItem="bmO-xa-gUb" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="ln2-LY-HIc"/>
+                            <constraint firstItem="mPn-Vq-waj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mSK-D8-eXv"/>
+                            <constraint firstItem="inC-mh-CVA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="oVZ-8C-VkS"/>
+                            <constraint firstItem="bmO-xa-gUb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="p3i-ox-vLb"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="hsI-Ff-p4d" secondAttribute="leading" id="s9o-eJ-x38"/>
+                            <constraint firstItem="uMe-x4-Bly" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="swW-LI-oSy"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="inC-mh-CVA" id="Rbe-vo-aDc"/>
+                        <outlet property="factsLabel" destination="hsI-Ff-p4d" id="fVb-G6-BKI"/>
+                        <outlet property="headerImageView" destination="bmO-xa-gUb" id="KIT-5R-gv8"/>
+                        <outlet property="nextFactButton" destination="mPn-Vq-waj" id="bUV-TM-Gx0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
+        </scene>
+    </scenes>
+</document>
