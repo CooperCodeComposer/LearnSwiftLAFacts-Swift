@@ -14,7 +14,6 @@ class ViewController: UIViewController {
     // MARK: Properties 
     
     let imageURL = "https://s3-us-west-2.amazonaws.com/awslearnswiftla/LSLAclouds.jpg"
-    
     let jsonURL = "https://s3-us-west-2.amazonaws.com/awslearnswiftla/SwiftFacts.json"
     
     var swiftFacts: [String]?
@@ -22,11 +21,8 @@ class ViewController: UIViewController {
     // MARK: IBOutlets
     
     @IBOutlet weak var headerImageView: UIImageView!
-    
     @IBOutlet weak var factsLabel: UILabel!
-    
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    
     @IBOutlet weak var nextFactButton: UIButton!
     
     
@@ -57,10 +53,14 @@ class ViewController: UIViewController {
                 return
             }
             
-            DispatchQueue.main.sync() {
-                self.headerImageView.contentMode = .scaleAspectFill
-                self.headerImageView.image = UIImage(data: data)
-                self.activityIndicator.stopAnimating()
+            DispatchQueue.main.sync {
+                
+                if let image = UIImage(data: data) {
+                    self.headerImageView.contentMode = .scaleAspectFill
+
+                    self.headerImageView.image = image
+                    self.activityIndicator.stopAnimating()
+                }
             }
         }.resume()
     }
@@ -113,7 +113,5 @@ class ViewController: UIViewController {
         
         factsLabel.text = getRandomFact()
     }
-    
-
 }
 
