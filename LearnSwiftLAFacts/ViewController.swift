@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GameKit
 
 class ViewController: UIViewController {
     
@@ -49,7 +50,7 @@ class ViewController: UIViewController {
         // makes optional url
         guard let url = URL(string: imageURL) else { return }
         
-        let task = URLSession.shared.dataTask(with: url) { data, response, error in
+        URLSession.shared.dataTask(with: url) { data, response, error in
             
             guard let data = data, error == nil else {
                 print(error)
@@ -61,9 +62,7 @@ class ViewController: UIViewController {
                 self.headerImageView.image = UIImage(data: data)
                 self.activityIndicator.stopAnimating()
             }
-        }
-            
-        task.resume()
+        }.resume()
     }
     
     func downloadJson() {
@@ -84,6 +83,12 @@ class ViewController: UIViewController {
                 if let array = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String] {
                     
                     self.swiftFacts = array
+                    
+                    DispatchQueue.main.sync() {
+                        self.factsLabel.text = self.getRandomFact()
+                        self.nextFactButton.isEnabled = true
+                    }
+                    
                 }
                 
             } catch let error as NSError {
@@ -93,30 +98,20 @@ class ViewController: UIViewController {
         }).resume()
     }
     
-    func zdownloadJson() {
+    func getRandomFact() -> String? {
         
-        factModel.downloadFacts() { (factArray) in
-            
-            guard let factArray = factArray else {
-                print("Error with factArray")
-                return
-            }
-            
-            // set data model
-            self.factModel.swiftFacts = factArray
-            
-            DispatchQueue.main.sync() {
-                self.factsLabel.text = self.factModel.getRandomFact()
-                self.nextFactButton.isEnabled = true
-            }
-        }
+        guard let factArray = swiftFacts else { return nil }
+        
+        let rand = GKRandomSource.sharedRandom().nextInt(upperBound: factArray.count)
+        
+        return factArray[rand]
     }
     
     // MARK: IBActions
     
     @IBAction func nextFact(_ sender: UIButton) {
         
-        factsLabel.text = factModel.getRandomFact()
+        factsLabel.text = getRandomFact()
     }
     
 
