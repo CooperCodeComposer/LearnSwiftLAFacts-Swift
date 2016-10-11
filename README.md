@@ -4,6 +4,8 @@ Demo app for AWS S3 image + json download in Swift 3
 - Swift 3.0
 - Xcode 8.0
 
+Used as a demo app in the Learn Swift LA Meetup - “Swift with Amazon Web Services” talk
+
 ##Features:
 + async downloading with URLSession
 + parsing Swift facts in json from AWS S3 
