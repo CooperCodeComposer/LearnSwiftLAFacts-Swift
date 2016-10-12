@@ -2,5 +2,9 @@
   "Structs are value types. Classes are reference types.",
   "Swift was released in 2014. People went ape with joy!",
   "var is used to declare a variable. let is used to declare a constant.",
-  "Structs, classes and enums can conform to multiple protocols but can only inherit from 1 class."
+  "Structs, classes and enums can conform to multiple protocols but can only inherit from 1 class.",
+  "JSON stands for Javascript Object Notation.",
+  "Unwrapping an optional that contains nil will crash.",
+  "The initial commit was by Chris Latener.",
+  "Swift is the primary language for developing new Apple apps."
   ]
