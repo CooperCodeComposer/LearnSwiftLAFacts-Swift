@@ -5,6 +5,6 @@
   "Structs, classes and enums can conform to multiple protocols but can only inherit from 1 class.",
   "JSON stands for Javascript Object Notation.",
   "Unwrapping an optional that contains nil will crash.",
-  "The initial commit was by Chris Latener.",
+  "The initial commit was by Chris Lattener.",
   "Swift is the primary language for developing new Apple apps."
   ]
