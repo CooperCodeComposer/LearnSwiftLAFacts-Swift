@@ -49,7 +49,7 @@ class ViewController: UIViewController {
         URLSession.shared.dataTask(with: url) { data, response, error in
             
             guard let data = data, error == nil else {
-                print(error)
+                print(error!)
                 return
             }
             
@@ -75,7 +75,7 @@ class ViewController: UIViewController {
         URLSession.shared.dataTask(with:url, completionHandler: { (data, response, error) in
             
             guard let data = data, error == nil else {
-                print(error)
+                print(error!)
                 return
             }
             
