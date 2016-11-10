@@ -25,7 +25,7 @@ class FactModel {
         URLSession.shared.dataTask(with:url, completionHandler: { (data, response, error) in
             
             guard let data = data, error == nil else {
-                print(error)
+                print(error!)
                 return
             }
             
