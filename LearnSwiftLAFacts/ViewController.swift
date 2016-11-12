@@ -53,7 +53,7 @@ class ViewController: UIViewController {
                 return
             }
             
-            DispatchQueue.main.sync {
+            DispatchQueue.main.async {
                 
                 if let image = UIImage(data: data) {
                     self.headerImageView.contentMode = .scaleAspectFill
@@ -84,7 +84,7 @@ class ViewController: UIViewController {
                     
                     self.swiftFacts = array
                     
-                    DispatchQueue.main.sync() {
+                    DispatchQueue.main.async {
                         self.factsLabel.text = self.getRandomFact()
                         self.nextFactButton.isEnabled = true
                     }
